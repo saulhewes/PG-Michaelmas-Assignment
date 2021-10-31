@@ -1,4 +1,4 @@
-/*Settings for all screen sizes*/
+/* Settings for all screen sizes */
 
 * {
     margin: 0;
@@ -20,7 +20,7 @@ html, body {
     display: none;
 }
 
-/*Top Navigation Bar*/
+/* Top Navigation Bar */
 
 header {
     position: fixed;
@@ -72,7 +72,11 @@ header {
     width: 100%;
 }
 
-.nav-bar .bi {
+#menu {
+    display: none;
+}
+
+#close {
     display: none;
 }
 
@@ -113,7 +117,7 @@ html[data-scroll="0"] .nav-bar .links ul li:hover:after {
     width: 100%;
 }
 
-/*Home Page Styling*/
+/* Home Page */
 
 .home {
     background-image: 
@@ -149,13 +153,13 @@ html[data-scroll="0"] .nav-bar .links ul li:hover:after {
 
 .home .name a:hover {
     color: #00ffd5;
-    font-size: 90px;
 }
 
 .home p {
     font-weight: 300;
     margin: 10px 0 30px;
     transition: 1s;
+    font-size: 22px;
 }
 
 .home #scroll {
@@ -185,7 +189,11 @@ html[data-scroll="0"] .nav-bar .links ul li:hover:after {
     margin-top: 25px;
 }
 
-/*Our Aim Page Styling*/
+.scroll {
+    font-size: 22px;
+}
+
+/* Our Aim Page */
 
 .aim {
     min-height: 92.5vh;
@@ -270,7 +278,7 @@ html[data-scroll="0"] .nav-bar .links ul li:hover:after {
     margin-top: 50px;
 }
 
-/*Research Page Styling*/
+/* Research Page */
 
 .research {
     background-image:
@@ -358,7 +366,7 @@ html[data-scroll="0"] .nav-bar .links ul li:hover:after {
     margin-top: 50px;
 }
 
-/*About Us Page Styling*/
+/* About Us Page */
 
 .about {
     background-image:
@@ -400,6 +408,12 @@ html[data-scroll="0"] .nav-bar .links ul li:hover:after {
     margin: 20px;
 }
 
+.about h2 {
+    font-weight: 200;
+    font-size: 25px;
+    margin: 20px;
+}
+
 .about p {
     font-weight: 200;
     font-size: 20px;
@@ -422,16 +436,17 @@ html[data-scroll="0"] .nav-bar .links ul li:hover:after {
     padding-top: 10px;
 }
 
-/*Contact Us Page Styling*/
+/* Contact Us Page */
 
 .contact {
     background-image:
     linear-gradient(rgba(187, 104, 255, 0.7), rgba(255, 170, 106, 0.4)),
     url(https://media4.giphy.com/media/l44QzsOLXxcrigdgI/giphy.gif?cid=790b7611714e69d9868ce51bfa137731718d3ba71c11d520&rid=giphy.gif&ct=g);
     min-height: 92.5vh;
+    max-height: 100vh;
     background-color: #f5f5f5;
     font-size: 40px;
-    scroll-snap-align: start;
+    scroll-snap-align: end;
     padding-top: 7.5vh;
     background-position: center;
     background-attachment: fixed;
@@ -461,10 +476,6 @@ html[data-scroll="0"] .nav-bar .links ul li:hover:after {
     font-weight: 300;
     color: #444444;
     transition: 0.5s;
-}
-
-.contact label:hover {
-    color: #9300ff;
 }
 
 .contact .email-box {
@@ -532,7 +543,7 @@ input[type=submit] {
     transition: 1s;
     text-decoration: none;
     border: none;
-    width: 90vw;
+    width: 90%;
     cursor: pointer;
     color: #444444;
 }
@@ -572,39 +583,33 @@ textarea:focus, input:focus{
     color: #9300ff
 }
 
-/*Settings dependent on screen size*/
+/* Settings dependent on screen size */
 
-/*Mobile devices*/
+/* Mobile devices */
 @media screen and (max-width: 600px) {
+    
     #menu {
-        display: flex;
+        display: inline-block;
         position: fixed;
         top: 20px;
         right: 20px;
         z-index: 1;
+        cursor: pointer;
     }
+
+    /*Change menu colour*/
 
     html[data-scroll="0"] #menu .bi {
         fill: #F5F5F5;
     }
-    
-    .home .name a {
-        font-size: 35px;
-    }
-    
-    .home p {
-        font-size: 17px;
+
+    html[data-scroll="812"] #menu .bi {
+        fill: #444444;
     }
 
-    .scroll {
-        font-size: 17px;
-    }
+    /* Pop-up nav-bar */
 
-    .nav-bar .links ul li {
-        display: block;
-    }
-
-    .nav-bar {
+    #nav-bar {
         display: none;
         position: fixed;
         height: 100vh;
@@ -616,9 +621,55 @@ textarea:focus, input:focus{
         transition: 1s;
     }
 
+    #close {
+        display: inline-block;
+        cursor: pointer;
+        position: fixed;
+        top: 0px;
+        right: 0;
+    }
+
+    .nav-bar .links ul li {
+        display: block;
+    }
+
     .nav-bar ul {
         padding: 30px;
     }
+
+    /* Home Page */
+    
+    .home .home-text {
+        max-width: 75%;
+    }
+
+    .home .name a {
+        font-size: 50px;
+    }
+    
+    .home p {
+        font-size: 17px;
+    }
+
+    .scroll {
+        font-size: 17px;
+    }
+
+    /* Text for all pages */
+
+    .text h1 {
+        font-size: 50px;
+    }
+
+    .text h2 {
+        font-size: 25px;
+    }
+
+    .text p {
+        font-size: 17px;
+    }
+
+    /* Our Aim Page */
 
     .aim {
         height: 100vh;
@@ -628,12 +679,21 @@ textarea:focus, input:focus{
     .aim .text {
         height: 100vh;
         text-align: left;
+        padding-top: 20px;
     }
+
+    /* Research Page */
 
     .research {
         height: 100vh;
         padding-top: 0px;
     }
+
+    .research footer {
+        font-size: 17px;
+    }
+
+    /* About Us Page */
 
     .about {
         height: 100vh;
@@ -643,10 +703,47 @@ textarea:focus, input:focus{
     .about .text {
         height: 80vh;
     }
+
+    /* Contact Us Page */
+
+    .contact {
+        height: 90vh;
+    }
+
+    .contact h1 {
+        font-size: 40px;
+    }
+
+    .contact label {
+        font-size: 17px;
+    }
+
+    input[type="text"] {
+        font-size: 17px;
+    }
+
+    .contact textarea {
+        font-size: 17px;
+    }
+
+    input[type="submit"] {
+        font-size: 25px;
+    }
+
+    .contact .icons {
+        font-size: 17px;
+    }
 }
 
-/*Less than half screen for desktop*/
+/* Less than half screen for desktop */
 @media screen and (min-width: 600px) and (max-width: 960px) {
+    
+    /* Home Page */
+
+    .home .name a {
+        font-size: 65px;
+    }
+    
     .home p {
         font-size: 17px;
     }
@@ -654,22 +751,49 @@ textarea:focus, input:focus{
     .scroll {
         font-size: 17px;
     }
-}
 
-/*Half screen upwards for desktop*/
-@media screen and (min-width: 960px) {
-    .home p {
-        font-size: 22px;
+    /* Text for all pages */
+
+    .text h1 {
+        font-size: 55px;
     }
 
-    .scroll {
-        font-size: 22px;
+    .text h2 {
+        font-size: 25px;
     }
-}
 
-/***************
-Settings to change for screen sizes
-- pop-up nav-bar for mobile
-- font-sizes
-- longer pages?
-***************/
+    .text p {
+        font-size: 20px;
+    }
+
+    .about .text .ps {
+        padding-top: 0px;
+    }
+
+    /* Contact Us Page */
+
+    .contact h1 {
+        font-size: 55px;
+    }
+
+    .contact label {
+        font-size: 20px;
+    }
+
+    input[type="text"] {
+        font-size: 20px;
+    }
+
+    .contact textarea {
+        font-size: 20px;
+    }
+
+    input[type="submit"] {
+        font-size: 25px;
+    }
+
+    .contact .icons {
+        font-size: 20px;
+    }
+
+}
