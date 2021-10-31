@@ -1,0 +1,675 @@
+/*Settings for all screen sizes*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+html, body {
+    max-width: 100%;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/*Top Navigation Bar*/
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    scroll-snap-align: start;
+    top: 0px;
+    border-bottom: 1px solid #F5F5F5;
+    width: 100%;
+    background-color: #F5F5F5;
+    height: 7.5vh;
+    z-index: 1;
+    transition: 0.5s;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+}
+
+.nav-bar .links li {
+    font-weight: 300;
+    font-size: 17px;
+    list-style: none;
+    display: inline-block;
+}
+
+.nav-bar .links a {
+    display: inline-block;
+    padding: 20px;
+    text-decoration: none;
+    color: #444444;
+    transition: 0.5s;
+}
+
+.nav-bar .links ul li::after {
+    content: " ";
+    width: 0%;
+    height: 4px;
+    background: #9300ff;
+    border-radius: 25px;
+    display: block;
+    margin: auto;
+    transition: 0.4s;
+}
+
+.nav-bar .links a:hover {
+    color: #9300ff;
+}
+
+.nav-bar .links ul li:hover:after {
+    width: 100%;
+}
+
+.nav-bar .bi {
+    display: none;
+}
+
+/* Navigation Bar when on home page */
+
+html[data-scroll="0"] header {
+    background-image: 
+    linear-gradient(rgba(187, 104, 255, 0.3), rgba(255, 170, 106, 0.4)),
+    url("https://64.media.tumblr.com/8b859cc7fdcca6995ec81eb5057f4e72/tumblr_pcbkzpukMt1r4mh0bo1_540.gifv");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transition: 0.5s;
+    box-shadow: none;
+}
+
+html[data-scroll="0"] .nav-bar a {
+    color: #F5F5F5
+}
+
+html[data-scroll="0"] .nav-bar .links ul li::after {
+    content: " ";
+    width: 0%;
+    height: 4px;
+    background: #F5F5F5;
+    border-radius: 25px;
+    display: block;
+    margin: auto;
+    transition: 0.4s;
+}
+
+html[data-scroll="0"] .nav-bar .links a:hover {
+    color: #F5F5F5;
+}
+
+html[data-scroll="0"] .nav-bar .links ul li:hover:after {
+    width: 100%;
+}
+
+/*Home Page Styling*/
+
+.home {
+    background-image: 
+    linear-gradient(rgba(187, 104, 255, 0.3), rgba(255, 170, 106, 0.4)),
+    url("https://64.media.tumblr.com/8b859cc7fdcca6995ec81eb5057f4e72/tumblr_pcbkzpukMt1r4mh0bo1_540.gifv");
+    background-repeat: no-repeat;
+    background-color: #444444;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    scroll-snap-align: start;
+    color: #F5F5F5;
+}
+
+.home .home-text {
+    max-width: 60%;
+}
+
+.home .name a {
+    font-size: 75px;
+    text-decoration: none;
+    color: #F5F5F5;
+    transition: all 1s;
+}
+
+.home .name a:hover {
+    color: #00ffd5;
+    font-size: 90px;
+}
+
+.home p {
+    font-weight: 300;
+    margin: 10px 0 30px;
+    transition: 1s;
+}
+
+.home #scroll {
+    text-decoration: none;
+    color: #F5F5F5;
+    transition: all 1.5s;
+    padding: 10px;
+    font-weight: 300;
+    display: inline-block;
+    border: 1px solid #F5F5F5;
+    background: transparent;
+}
+
+.home #scroll:hover {
+    background: rgba(245, 245, 245, 0.7);
+    color: #444444;
+    border-color: rgba(245, 245, 245, 0);
+    margin-top: 75px;
+    margin-bottom: 75px;
+}
+
+.home #arrow {
+    color: #F5F5F5;
+    transition: 1s;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 25px;
+}
+
+/*Our Aim Page Styling*/
+
+.aim {
+    min-height: 92.5vh;
+    background-color: #F5F5F5;
+    padding-top: 7.5vh;
+    font-size: 40px;
+    scroll-snap-align: start;
+    background-image: 
+    linear-gradient(rgba(187, 104, 255, 0.3), rgba(255, 170, 106, 0.4)),
+    url("https://64.media.tumblr.com/8b859cc7fdcca6995ec81eb5057f4e72/tumblr_pcbkzpukMt1r4mh0bo1_540.gifv");
+    background-repeat: no-repeat;
+    background-color: #F5F5F5;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: right;
+}
+
+.aim .text{
+    position: relative;
+    height: 92.5vh;
+    background-color: #F5F5F5;
+    background-position: center;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    color: #444444;
+}
+
+.aim h1 {
+    font-weight: 300;
+    font-size: 60px;
+    margin: 20px;
+    transition: 1s;
+}
+
+.aim h1:hover {
+    color: #9300ff;
+}
+
+.aim h2 {
+    font-weight: 200;
+    font-size: 30px;
+    margin: 20px;
+    transition: 0.5s;
+}
+
+.aim h2:hover {
+    color: #9300ff;
+}
+
+.aim p {
+    font-weight: 200;
+    font-size: 20px;
+    margin: 20px;
+    transition: 0.5s;
+}
+
+.aim p:hover {
+    color: #9300ff;
+}
+
+.aim .scroll {
+    text-decoration: none;
+    color: #444444;
+    transition: all 1s;
+    padding: 10px;
+    font-weight: 200;
+    display: inline-block;
+    border: 1px solid #444444;
+    background: transparent;
+    margin: 20px;
+}
+
+.aim .scroll:hover {
+    background: #9300ff;
+    border-color: #9300ff;
+    color: #F5F5F5;
+    margin-top: 50px;
+}
+
+/*Research Page Styling*/
+
+.research {
+    background-image:
+    linear-gradient(rgba(187, 104, 255, 0.7), rgba(255, 170, 106, 0.4)),
+    url(https://media4.giphy.com/media/l44QzsOLXxcrigdgI/giphy.gif?cid=790b7611714e69d9868ce51bfa137731718d3ba71c11d520&rid=giphy.gif&ct=g);
+    min-height: 92.5vh;
+    background-color: #f5f5f5;
+    font-size: 40px;
+    padding-top: 7.5vh;
+    scroll-snap-align: start;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    align-items: left;
+    display: flex;
+    justify-content: left;
+    text-align: left;
+}
+
+.research h1 {
+    color: #F5F5F5;
+    font-weight: 500;
+    font-size: 60px;
+    margin: 20px;
+    transition: 1s;
+}
+
+.research h1:hover {
+    color: #00ffd5;
+}
+
+.research h2 {
+    color: #F5F5F5;
+    font-weight: 200;
+    font-size: 25px;
+    margin: 20px;
+    transition: 1s;
+}
+
+.research h2:hover {
+    color: #00ffd5;
+}
+
+.research p {
+    font-weight: 200;
+    font-size: 20px;
+    color: #F5F5F5;
+    margin: 20px;
+    transition: 1s;
+}
+
+.research p:hover {
+    color: #00ffd5;
+}
+
+.research a {
+    text-decoration: none;
+    color: #F5F5F5;
+}
+
+.research footer {
+    font-size: 20px;
+    font-weight: 100;
+    position: absolute;
+    margin: 20px;
+    bottom: 0px;
+}
+
+.research .scroll {
+    text-decoration: none;
+    color: #F5F5F5;
+    transition: all 1s;
+    padding: 10px;
+    font-weight: 200;
+    display: inline-block;
+    border: 1px solid #F5F5F5;
+    background: transparent;
+    margin: 20px;
+}
+
+.research .scroll:hover {
+    background: #00ffd5;
+    border-color: #00ffd5;
+    color: #444444;
+    margin-top: 50px;
+}
+
+/*About Us Page Styling*/
+
+.about {
+    background-image:
+    linear-gradient(rgba(187, 104, 255, 0.7), rgba(255, 170, 106, 0.4)),
+    url(https://media4.giphy.com/media/l44QzsOLXxcrigdgI/giphy.gif?cid=790b7611714e69d9868ce51bfa137731718d3ba71c11d520&rid=giphy.gif&ct=g);
+    min-height: 92.5vh;
+    background-color: #f5f5f5;
+    font-size: 40px;
+    scroll-snap-align: start;
+    padding-top: 7.5vh;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.about .text {
+    border-radius: 25px;
+    background: #444444;
+    height: 72.5vh;
+    width: 80vw;
+    color: #f5f5f5;
+    transition: all 1s;
+}
+
+.about .text:hover {
+    height: 82.5vh;
+    width: 90vw;
+    background: #f5f5f5;
+    color: #444444;
+}
+
+.about h1 {
+    font-weight: 300;
+    font-size: 60px;
+    margin: 20px;
+}
+
+.about p {
+    font-weight: 200;
+    font-size: 20px;
+    margin: 20px;
+}
+
+.about img {
+    border-radius: 25px;
+    margin-top: 25px;
+    max-height: 30vh;
+    max-width: 50vw;
+    transition: 1s;
+}
+
+.about .text .ps {
+    font-size: 10px;
+    font-weight: 100;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+/*Contact Us Page Styling*/
+
+.contact {
+    background-image:
+    linear-gradient(rgba(187, 104, 255, 0.7), rgba(255, 170, 106, 0.4)),
+    url(https://media4.giphy.com/media/l44QzsOLXxcrigdgI/giphy.gif?cid=790b7611714e69d9868ce51bfa137731718d3ba71c11d520&rid=giphy.gif&ct=g);
+    min-height: 92.5vh;
+    background-color: #f5f5f5;
+    font-size: 40px;
+    scroll-snap-align: start;
+    padding-top: 7.5vh;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #444444;
+}
+
+.contact h1 {
+    background: #f5f5f5;
+    font-weight: 300;
+    padding: 20px;
+    border-radius: 25px;
+    font-size: 60px;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    transition: 1s;
+}
+
+.contact h1:hover {
+    color: #9300ff;
+}
+
+.contact label {
+    font-weight: 300;
+    color: #444444;
+    transition: 0.5s;
+}
+
+.contact label:hover {
+    color: #9300ff;
+}
+
+.contact .email-box {
+    background: #f5f5f5;
+    font-weight: 200;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 20px;
+    margin: 5vh;
+    transition: 0.5s;
+}
+
+.contact .email-box:hover {
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.contact .message {
+    background: #f5f5f5;
+    font-weight: 200;
+    font-size: 20px;
+    margin: 5vh;
+    height: 32vh;
+    padding-top: 10px;
+    border-radius: 25px;
+    transition: 0.5s;
+}
+
+.contact .message:hover {
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+input[type=text] {
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    color: #444444;
+    font-weight: 200;
+    padding: 10px;
+    font-size: 20px;
+    width: 81.5vw;
+    border-radius: 25px;
+}
+
+.contact textarea {
+    text-decoration: none;
+    background-color: transparent;
+    color: #444444;
+    font-weight: 200;
+    font-size: 20px;
+    border-radius: 25px;
+    border: none;
+    width: 81.5vw;
+    padding: 10px;
+}
+
+input[type=submit] {
+    align-items: center;
+    background: #00ffd5;
+    font-weight: 300;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 25px;
+    transition: 1s;
+    text-decoration: none;
+    border: none;
+    width: 90vw;
+    cursor: pointer;
+    color: #444444;
+}
+
+input[type=submit]:hover {
+    color: #f5f5f5;
+    background-color: #9300ff;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.contact .icons {
+    background: #f5f5f5;
+    font-weight: 200;
+    padding-top: 10px;
+    width: 100%;
+    font-size: 20px;
+    transition: 1s;
+    position: absolute;
+    bottom: 0px;
+}
+
+.contact .icons:hover {
+    color: #9300ff;
+}
+
+.contact .bi {
+    padding: 10px 10px;
+    text-decoration: none;
+    color: #444444;
+    transition: 0.5s;
+}
+
+.contact .bi:hover {
+    color: #9300ff
+}
+
+/*Settings dependent on screen size*/
+
+/*Mobile devices*/
+@media screen and (max-width: 600px) {
+    #menu {
+        display: flex;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1;
+    }
+
+    html[data-scroll="0"] #menu .bi {
+        fill: #F5F5F5;
+    }
+    
+    .home .name a {
+        font-size: 35px;
+    }
+    
+    .home p {
+        font-size: 17px;
+    }
+
+    .scroll {
+        font-size: 17px;
+    }
+
+    .nav-bar .links ul li {
+        display: block;
+    }
+
+    .nav-bar {
+        display: none;
+        position: fixed;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: 0;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+
+    .nav-bar ul {
+        padding: 30px;
+    }
+
+    .aim {
+        height: 100vh;
+        padding-top: 0px;
+    }
+
+    .aim .text {
+        height: 100vh;
+        text-align: left;
+    }
+
+    .research {
+        height: 100vh;
+        padding-top: 0px;
+    }
+
+    .about {
+        height: 100vh;
+        padding-top: 0px;
+    }
+
+    .about .text {
+        height: 80vh;
+    }
+}
+
+/*Less than half screen for desktop*/
+@media screen and (min-width: 600px) and (max-width: 960px) {
+    .home p {
+        font-size: 17px;
+    }
+
+    .scroll {
+        font-size: 17px;
+    }
+}
+
+/*Half screen upwards for desktop*/
+@media screen and (min-width: 960px) {
+    .home p {
+        font-size: 22px;
+    }
+
+    .scroll {
+        font-size: 22px;
+    }
+}
+
+/***************
+Settings to change for screen sizes
+- pop-up nav-bar for mobile
+- font-sizes
+- longer pages?
+***************/
